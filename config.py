@@ -15,11 +15,11 @@ class Config(object):
     # SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'ENTER_SQL_SERVER_PASSWORD'
 
     BLOB_ACCOUNT = os.environ.get('BLOB_ACCOUNT') or 'storagepart1'
-    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'rmZovQWSGI+yRGvtClzduuho8oGY18Wt1y4LvqcjCsPOrsulWRUOg/UKoRHVr2n7zwSAbHN9Kmpk+AStwq3BKg=='
+    BLOB_STORAGE_KEY = os.environ.get('BLOB_STORAGE_KEY') or 'jk3JlGbSN3GYLHpgm/kW8Mg3aTDhwzz4Rwc+WpeR8WeEKhE5vz3FVa4Daj+aY/qNqdqq3Fada7C3+AStN3qTgg=='
     BLOB_CONTAINER = os.environ.get('BLOB_CONTAINER') or 'images'
 
-    SQL_SERVER = os.environ.get('SQL_SERVER') or 'dbserverpart1.database.windows.net'
-    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'database-part1'
+    SQL_SERVER = os.environ.get('SQL_SERVER') or 'dbserverp1.database.windows.net'
+    SQL_DATABASE = os.environ.get('SQL_DATABASE') or 'database-p1'
     SQL_USER_NAME = os.environ.get('SQL_USER_NAME') or 'admin1'
     SQL_PASSWORD = os.environ.get('SQL_PASSWORD') or 'Loveyou@2009'
     # Below URI may need some adjustments for driver version, based on your OS, if running locally
