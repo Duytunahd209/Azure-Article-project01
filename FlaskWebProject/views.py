@@ -75,6 +75,7 @@ def login():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             # LOG Unsuccessful login
+            print('WARNING: Login Unsucessful....Invalid username or password for user:' + str(user))
             LOG.warning('WARNING: Login Unsucessful....Invalid username or password for user:' + str(user))
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
@@ -114,6 +115,7 @@ def authorized():
         _save_cache(cache)
         # LOG
         LOG.info('INFO: User Logged In...')
+        print(str(user) + ' Logged in Successfully')
     return redirect(url_for('home'))
 
 @app.route('/logout')
