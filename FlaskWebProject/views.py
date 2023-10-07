@@ -75,16 +75,17 @@ def login():
         if user is None or not user.check_password(form.password.data):
             flash('Invalid username or password')
             # LOG Unsuccessful login
-            print('WARNING: Login Unsucessful....Invalid username or password for user:' + str(user))
             LOG.warning('WARNING: Login Unsucessful....Invalid username or password for user:' + str(user))
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         next_page = request.args.get('next')
         if not next_page or url_parse(next_page).netloc != '':
             next_page = url_for('home')
+            print(str(user) + ' loged in successfully!!!')
         return redirect(next_page)
     session["state"] = str(uuid.uuid4())
     auth_url = _build_auth_url(scopes=Config.SCOPE, state=session["state"])
+    print('Login failed!!! Invalid login attempt.')
     return render_template('login.html', title='Sign In', form=form, auth_url=auth_url)
 
 @app.route(Config.REDIRECT_PATH)  # Its absolute URL must match your app's redirect_uri set in AAD
